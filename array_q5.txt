@@ -1,0 +1,25 @@
+//missing number
+#include <stdio.h>
+
+int main(void) {
+int i,a[100],n;
+scanf("%d",&n);
+for(i=0;i<n-1;i++)
+{
+    scanf("%d",&a[i]);
+}
+for(i=1;i<=n;i++)
+{
+    if(a[i-1]!=i)
+    {
+        printf("%d",i);
+        i=i-1;
+        break;
+    }
+    else{
+        continue;
+    }
+}
+return 0;
+}
+

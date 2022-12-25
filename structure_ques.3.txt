@@ -1,0 +1,27 @@
+// Write a program to store and print the roll no., name, age, address and marks of 15 students using structure.
+#include <stdio.h>
+
+struct student
+{
+    char name[10];
+    int roll ;
+    int age;
+    char address[20];
+    int m1,m2;
+}s1[15];
+
+int main(void) {
+    int i,j;
+    for(i=0;i<15;i++)
+    {
+     gets(s1[i].name);
+    scanf("%d%d",&s1[i].roll,&s1[i].age);
+    gets(s1[i].address);
+    scanf("%d%d",&s1[i].m1,&s1[i].m2);
+      
+    }
+
+	return 0;
+}
+
+

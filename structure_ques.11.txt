@@ -1,0 +1,17 @@
+//11. Write a program to compare two dates entered by user. Make a structure named Date to store the elements day, month and year to store the dates. If the dates are equal, display "Dates are equal" otherwise display "Dates are not equal".
+#include <stdio.h>
+#include<math.h>
+#include <stdio.h>
+struct time
+{
+    int date,month,year;
+}n1,n2,sum;
+int main() {
+  int i,j;
+    scanf("%d%d%d",&n1.date,&n1.month,&n1.year);
+    scanf("%d%d%d",&n2.date,&n2.month,&n2.year);
+    if(n1.date==n2.date&&n1.month==n2.month&&n1.year==n2.year)
+    printf("Dates are equal");
+    else
+    printf("Dates are not equal");
+}

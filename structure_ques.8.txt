@@ -1,0 +1,40 @@
+// Write a program to add, subtract and multiply two complex numbers using structures to function.
+#include <stdio.h>
+struct complex
+{
+    int real,imaginary;
+}n1,n2,sum,multiply;
+int main(void) {
+    int i,j;
+    scanf("%d%d",&n1.real,&n1.imaginary);
+    scanf("%d%d",&n2.real,&n2.imaginary);
+    add(n1.real,n1.imaginary,n2.real,n2.imaginary);
+    printf("\n");
+    sub(n1.real,n1.imaginary,n2.real,n2.imaginary);
+    printf("\n");    
+    mul(n1.real,n1.imaginary,n2.real,n2.imaginary);
+    printf("\n");
+return 0;
+}
+add (int x,int y,int a, int b)
+{
+ int s1,s2;
+ s1=x+a;
+ s2=y+b;
+ printf("%d +%di",s1,s2);
+}
+sub (int x,int y,int a, int b)
+{
+ int s1,s2;
+ s1=x-a;
+ s2=y-b;
+ printf("%d +%di",s1,s2);
+}
+mul (int x,int y,int a, int b)
+{
+ int s1,s2,s3;
+ s1=x*a;
+ s2=y*b;
+ s3=x*b+a*y;
+ printf("%d +%di-%d",s1,s3,s2);
+}

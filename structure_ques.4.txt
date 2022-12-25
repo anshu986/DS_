@@ -1,0 +1,22 @@
+// Write a program to add two distances in inch-feet using structure. The values of the distances is to be taken from the user.
+#include <stdio.h>
+struct distance
+{
+    int feet,inch;
+}d1,d2,sum;
+int main(void) {
+    int i,j;
+    scanf("%d%d",&d1.feet,&d1.inch);
+    scanf("%d%d",&d2.feet,&d2.inch);
+    sum.feet=d1.feet+d2.feet;
+    sum.inch=d1.inch+d2.inch;
+    while(sum.inch>=12)
+    {
+        sum.inch-=12;
+        sum.feet++;
+    }
+    printf("%dfeet %d inch",sum.feet,sum.inch);
+    
+
+return 0;
+}

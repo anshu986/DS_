@@ -1,0 +1,19 @@
+//Program to reverse the given number using Recursion
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+  int n,rev=0,ans;
+  scanf("%d",&n);
+ ans= reverse(n,rev);
+ printf("%d",ans);
+}
+int reverse(int num,int rev)
+{
+    if(num==0)
+    return rev;
+    else{
+        return reverse(num/10,rev*10+num%10);
+    }
+    
+}

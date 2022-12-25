@@ -1,0 +1,78 @@
+// Write a structure to store the roll no., name, age (between 11 to 14) and address of students (more than 10). Store the information of the students. - Write a function to print the names of all the students having age 14.
+ - Write another function to print the names of all the students having even roll no.
+ - Write another function to display the details of the student whose roll no is given (i.e. roll no. entered by the user).
+ 
+
+#include <stdio.h>
+struct student
+{
+    int roll;
+    char name[10];
+    int age;
+    int address;
+}s1[4];
+int main(void) {
+    int i,j,n;
+    //scanf("%d",&n);
+    //struct student s1[n];
+    for(i=0;i<4;i++)
+    {
+        printf("Roll no:");
+        scanf("%d",&s1[i].roll);
+        printf("Name:");
+        scanf("%s",s1[i].name);
+        printf("Age:");
+        scanf("%d",&s1[i].age);
+        printf("Address:");
+        scanf("%d",&s1[i].address);
+    }
+    age(s1);
+    roll(s1);
+    ans_roll(s1);
+    
+return 0;
+}
+void roll(struct student s[])
+{
+     int i;
+    printf("students with even roll no.");
+    for(i=0;i<4;i++)
+    {
+       if(s[i].roll%2==0)
+       {
+           printf("%s",s[i].name);
+           printf("\n");
+       }
+       
+    }
+    
+}
+void age(struct student s[])
+{
+    int i;
+    printf("Students having age more than 14 yrs :");
+    for(i=0;i<4;i++)
+    {
+        if(s[i].age>14)
+        printf("%s",s[i].name);
+      printf("\n");
+    }
+  
+}
+void ans_roll(struct student s[])
+{
+    int x,i;
+    scanf("%d",&x);
+    printf("Student having roll no. %d is ",x);
+    for(i=0;i<4;i++)
+    {
+        if(s[i].roll==x)
+        {
+           printf("%s",s[i].name); 
+        }
+    }
+    printf("\n");
+}
+
+
+

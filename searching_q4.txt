@@ -1,0 +1,32 @@
+jump search
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+   int i,k,arr[10],n,beg=0,end=0;
+   scanf("%d",&n);
+   for(i=0;i<n;i++)
+   {
+       scanf("%d",&arr[i]);
+   }
+   scanf("%d",&k);
+   beg=0;
+   end=sqrt(n);
+   while(arr[end]<k&&end<n)
+   {
+       beg=end;
+       end+=sqrt(n);
+       if(end<n-1)
+       {
+           break;
+       }
+   }
+   for(i=beg;i<=end;i++)
+   {
+       if(k==arr[i])
+       {
+           printf("%d",i+1);
+       }
+   }
+}
+

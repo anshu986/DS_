@@ -1,0 +1,17 @@
+// Write a program to add two complex numbers using structure. The values of the complex number is to be taken from the user.
+#include <stdio.h>
+struct complex
+{
+    int real,imaginary;
+}n1,n2,sum;
+int main(void) {
+    int i,j;
+    scanf("%d%d",&n1.real,&n1.imaginary);
+    scanf("%d%d",&n2.real,&n2.imaginary);
+    sum.real=n1.real+n2.real;
+    sum.imaginary=n1.imaginary+n2.imaginary;
+    printf("%d+%di ",sum.real,sum.imaginary);
+    
+
+return 0;
+}

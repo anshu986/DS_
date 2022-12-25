@@ -1,0 +1,18 @@
+//Finding sum of the digits of the number
+
+#include <stdio.h>
+
+int main()
+{
+    int n,sum=0,ans;
+    scanf("%d",&n);
+    ans=sumof(n,sum);
+    printf("%d",ans);
+}
+int sumof(int n,int sum)
+{
+    if(n==0)
+        return sum;
+    else
+        return sumof(n/10,sum+n%10);
+}

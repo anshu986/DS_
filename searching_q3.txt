@@ -1,0 +1,46 @@
+
+ternary search
+
+#include<stdio.h>
+ main()
+{
+    int i,j,n,beg,end,a[i],m1,m2,k=0;;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&j);
+    beg=0;
+    end=n-1;
+    while(beg<=end)
+    {
+        m1=beg+((end-beg)/3);
+        m2=m1+((end-beg)/3);
+        if(j==a[m1])
+        {
+            printf("%d",m1);
+            break;
+        }
+        else if(j==a[m2])
+        {
+            printf("%d",m2);
+            break;
+        }
+        else if(j<a[m1])
+        {
+            end=m1-1;
+        }
+         else if(j>a[m1])
+        {
+            beg=m1+1;
+            end=m2-1;
+        }
+        else if(j>a[m2])
+        {
+            beg=m2+1;
+        }
+       
+    }
+}
+

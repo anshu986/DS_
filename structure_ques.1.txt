@@ -1,0 +1,46 @@
+//Get the input of student: Name, Roll No, Marks in 6 subjects in 12th. Find if the student is eligible for admission in Delhi University. A student is eligible for DU if he has scored 95 % or more in Best 4.
+
+#include <stdio.h>
+struct student
+{
+    char name[10];
+    int roll;
+    float a[6];
+}s1;
+
+int main(void) {
+	int i,p,temp,sum=0; 
+	gets(s1.name);
+	scanf("%d",&s1.roll);
+	for(i=0;i<6;i++)
+	{
+	    scanf("%f",&s1.a[i]);
+	}
+	for(i=0;i<5;i++)
+	{
+	    for(p=0;p<5-i;p++)
+	    {
+	        if(s1.a[i]>s1.a[i+1])
+	        {
+	            temp=s1.a[i];
+	            s1.a[i]=s1.a[i+1];
+	            s1.a[i+1]=temp;
+	        }
+	    }
+	}
+	for(i=2;i<6;i++)
+	{
+	    sum=sum+s1.a[i];
+	}
+	sum=sum/(4);
+	if(sum>95)
+	{
+	    printf("Eligible");
+	}
+	else{
+	    printf("Not eligible");
+	}
+	
+	return 0;
+}
+

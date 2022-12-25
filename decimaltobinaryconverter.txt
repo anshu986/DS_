@@ -1,0 +1,80 @@
+//Program for Decimal to Binary Conversion
+#include <stdio.h>
+typedef struct stack
+{
+    int a[10];
+    int top;
+} stack_type;
+
+int overflow(stack_type *v)
+{
+    if(v->top==9)
+    return 0;
+    else
+    return 1;
+    
+}
+
+int underflow(stack_type *v)
+{
+    if(v->top==-1)
+    return 0;
+    else
+    return 1;
+    
+}
+void push(stack_type *v,int i)
+{
+    (v->top)++;
+    v->a[v->top]=i;
+}
+
+int pop(stack_type *v)
+{
+
+    int temp =v->a[v->top];
+    v->top--;
+    return temp;
+}
+
+void display(stack_type *v)
+{
+   int i;
+   for (i=(v->top);i>=0;i--)
+   {
+       printf("%d",v->a[i]);
+   }
+}
+
+void init(stack_type *v)
+{
+    v->top=-1;
+}
+int main(){
+    stack_type s;
+    int i,r,n,m,x;
+    init(&s);
+    
+    scanf("%d",&n);
+    while(n>0)
+    {
+        r=n%2;
+        push(&s,r);
+        n=n/2;
+    }
+    do
+    {
+        x=underflow(&s);
+        if(x==1){
+         m=pop(&s);
+        printf("%d",m);
+          
+        }
+       
+    }while(x==1);
+    
+    
+}
+
+
+

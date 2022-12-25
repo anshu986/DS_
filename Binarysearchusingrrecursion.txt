@@ -1,0 +1,48 @@
+//Binary Search with Recursion
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+    int st,mid,l,a[10],i,n,ele,r;
+    scanf("%d",&n);
+    scanf("%d",&ele);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    mid=(l-st)/2;
+    r=bs(0,n-1,a,ele);
+    if(r==-1)
+    {
+        printf("Element does not exist");
+    }
+    else{
+         printf("Element exist at %d",r);
+    }
+   
+}
+int bs(int st,int l,int a[],int ele)
+{
+    int mid;
+    mid=(l+st)/2;
+    while(st<=l)
+    {
+        if(ele==a[mid])
+    {
+        return mid;
+    }
+    else if(ele<a[mid])
+    {
+        return bs(st,mid-1,a,ele);
+    }
+
+    else if(ele>a[mid])
+    {
+        return bs(mid+1,l,a,ele);
+    }
+    }
+    
+   return -1;
+}
+
+

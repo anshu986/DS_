@@ -1,0 +1,86 @@
+//Balanced Paranthesis
+
+#include <stdio.h>
+typedef struct stack
+{
+    int a[10];
+    int top;
+} stack_type;
+
+int overflow(stack_type *v)
+{
+    if(v->top==9)
+    return 0;
+    else
+    return 1;
+    
+}
+
+int underflow(stack_type *v)
+{
+    if(v->top==-1)
+    return 0;
+    else
+    return 1;
+    
+}
+void push(stack_type *v,char ch)
+{
+    (v->top)++;
+    v->a[v->top]=ch;
+}
+
+int pop(stack_type *v)
+{
+
+    int temp =v->a[v->top];
+    v->top--;
+    return temp;
+}
+
+void display(stack_type *v)
+{
+   int i;
+   for (i=(v->top);i>=0;i--)
+   {
+       printf("%d",v->a[i]);
+   }
+}
+
+void init(stack_type *v)
+{
+    v->top=-1;
+}
+int main(){
+    stack_type s;
+    int i,j,x;
+    char ch[10],t;
+    init(&s);
+    scanf("%s",ch);
+    for(i=0;ch[i]!='\0';i++)
+    {
+        j=overflow(&s);
+        if(j==1){
+        if(ch[i]=='('){
+        t=ch[i];
+        push(&s,t);
+        }
+        else if(ch[i]==')')
+        {
+            pop(&s);
+        }
+        }
+        else{
+            printf("Overflow");
+        }
+    }
+    x=underflow(&s);
+    if(x==1)
+    {
+        printf("Not balanced");
+    }
+    else{
+        printf("Balanced");
+    }
+}
+
